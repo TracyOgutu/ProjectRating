@@ -1,0 +1,46 @@
+{% load bootstrap4%}
+{%load static%}
+
+{{block.super}}
+{%block content%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    
+
+  <title>New Image</title>
+  {{form.media}}
+
+{% block styles %} 
+{% bootstrap_css %}
+ 
+   {% endblock %}
+</head>
+
+<body>
+<div class="col-lg-5 my-auto">
+    <div class="device-container">
+        
+<form action="{%url 'add-project'%}" method="post" enctype="multipart/form-data">
+{%csrf_token%}
+
+{% bootstrap_form form%}
+<input type="submit" class="btn btn-success btn-lg" value="Post">
+</form>
+
+                <div class="button">
+                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                </div>
+            </div>
+            </div>
+            </body>
+            </html>
+{%endblock%}
