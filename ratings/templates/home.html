@@ -1,14 +1,90 @@
+{%load bootstrap4%}
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Project </title>
+    {%block styles%}
+    {%bootstrap_css%}
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/ratings.css' %}">
+    {%endblock%}
 </head>
+
 <body>
+   {%block navbar%}
+    {% include 'navbar.html' %}
+    {%endblock%}
+
     {%block content%}
     <h1>Hi there Project rater</h1>
+
+    <!-- {%if profile%}
+        
+        {% if user.is_authenticated %}
+        {%for profile in profile%}
+        <div>
+            <img src="{{profile.profile_photo.url}}" class="img-fluid" style="height:300px;width:300px;">
+        </div>
+       
+       
+        <div>
+                <h1 class="text-center" style="color: red;">{{user.username}} bio: {{profile.bio}}</h1>
+        </div>
+        
+        <div>
+            <h3>Contact : {{profile.contact}}</h3>
+        </div>
+       {%endfor%}
+
+        {%else%}
+        <div>
+            <h1 class="text-center">{{user.username}} has no profile</h1>
+        </div>
+
+        {%endif%}
+
+    {%endif%} -->
+        
+
+    <!-- {%for projects in projects%}
+    <h2>Posted:{{projects.pub_date}}</h2>
+    <h2>Title:{{projects.title}}</h2>
+    <p>Description:{{projects.description|safe}}</p>
+    <a href="{{projects.link}}">View Project Link</a>
+    <div>
+        <img src="{{projects.image.url}}" alt="image" height="300px;" width="300px;">
+    </div>
+    <a>Rate</a>
+
+    <a href="{% url 'displayprofile' projects.editor.id %}">View Profile</a>
+    {%endfor%} -->
+
+    {%for projects in allprojects%}
+    <h2>Posted:{{projects.pub_date}}</h2>
+    <h2>Title:{{projects.title}}</h2>
+    <p>Description:{{projects.description|safe}}</p>
+    <a href="{{projects.link}}">View Project Link</a>
+    <div>
+        <img src="{{projects.image.url}}" alt="image" height="300px;" width="300px;">
+    </div>
+    <a>Rate</a>
+
+    <a href="{% url 'displayprofile' projects.editor.id %}">View Profile</a>
+    {%endfor%}
     {%endblock%}
+
+
+    {% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% bootstrap_javascript %}
+    {% endblock %}
+
+
 </body>
+
 </html>
