@@ -1,5 +1,5 @@
 from django import forms
-from .models import Profile,Project
+from .models import Profile,Project,Rating
 
 class NewProjectForm(forms.ModelForm):
     class Meta:
@@ -15,4 +15,11 @@ class NewProfileForm(forms.ModelForm):
         exclude=['editor']
         widgets={
             'tags':forms.CheckboxSelectMultiple(),
+        }
+class NewRatingForm(forms.ModelForm):
+    class Meta:
+        model=Rating
+        exclude=['editor','project']
+        widgets={
+            'tags':forms.CheckboxSelectMultiple
         }
