@@ -10,13 +10,10 @@ urlpatterns=[
     url(r'^project/(\d+)',views.single_project,name='project'),
     url(r'^add/project$', views.add_project, name='add-project'),
     url(r'^new/profile$', views.new_profile, name='new-profile'),
-    # url(r'^updateprofile$',views.updateprofile,name='updateprofile'),
-    # url(r'^comment$',views.makecomment,name='makecomment'),
-    # url(r'^like$',views.like_a_post,name='like_a_post'),
-    # url(r'^follow$',views.follow,name='follow'),
-    # url(r'^delete/(?P<post_id>\d+)$',views.delete_post,name='delete'),
-    url(r'displayprofile/(?P<user_id>\d+)$',views.display_profile,name='displayprofile')
-    
+    url(r'^rate$',views.add_rating,name='rate'),
+    url(r'displayprofile/(?P<user_id>\d+)$',views.display_profile,name='displayprofile'),
+    url(r'^api/profile/$', views.ProfileList.as_view()),
+    url(r'^api/project/$', views.ProjectList.as_view()),
     
 ]
 if settings.DEBUG:
