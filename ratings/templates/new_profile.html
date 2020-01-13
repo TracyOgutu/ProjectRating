@@ -1,4 +1,3 @@
-
 {%load bootstrap4%}
 {%load static%}
 {{block.super}}
@@ -84,55 +83,30 @@
         <div class="container text-center my-auto">
             <div class="row">
                 <div class="col-lg-10 mx-auto">
-                        <div class="col-lg-10 my-auto">
-                                <div class="device-container">
-                                    
+                    <div class="col-lg-10 my-auto">
+                        <div class="device-container">
+
                             <form action="{%url 'new-profile'%}" method="post" enctype="multipart/form-data">
-                            {%csrf_token%}
-                            
-                            {% bootstrap_form form%}
-                            <input type="submit" class="btn btn-success btn-lg" value="Post">
+                                {%csrf_token%}
+
+                                {% bootstrap_form form%}
+                                <input type="submit" class="btn btn-success btn-lg" value="Post">
                             </form>
-                            
-                                            <div class="button">
-                                                <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                                            </div>
-                                        </div>
-                                        </div>
-                  
-                </div>
+
+                            <div class="button">
+                                <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
-                
+
             </div>
-        
+
+        </div>
+
     </header>
 
-
-
-    <!-- Footer
-    <footer class="footer text-center">
-        <div class="container">
-            <ul class="list-inline mb-5">
-                <li class="list-inline-item">
-                    <a class="social-link rounded-circle text-white mr-3" href="#">
-                        <i class="icon-social-facebook"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a class="social-link rounded-circle text-white mr-3" href="#">
-                        <i class="icon-social-twitter"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a class="social-link rounded-circle text-white" href="#">
-                        <i class="icon-social-github"></i>
-                    </a>
-                </li>
-            </ul>
-            <p class="text-muted small mb-0">Copyright &copy; Project Hub 2019</p>
-        </div>
-    </footer> -->
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">

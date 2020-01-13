@@ -38,7 +38,8 @@
 
 </head>
 
-<body id="page-top" style="background-image:url(../../static/img/bluepen.jpg);color: white; background-repeat: no-repeat; background-size: cover;">
+<body id="page-top"
+  style="background-image:url(../../static/img/bluepen.jpg);color: white; background-repeat: no-repeat; background-size: cover;">
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -55,61 +56,55 @@
     </div>
   </nav>
 
-  
-    <div class="container h-100" >
-      <div class="row h-100">
-        <div class="col-lg-7 my-auto">
-          <div class="header-content mx-auto">
-            <h1 class="mb-5">
-              <hr>Project Hub</h1>
 
-          </div>
+  <div class="container h-100">
+    <div class="row h-100">
+      <div class="col-lg-7 my-auto">
+        <div class="header-content mx-auto">
+          <h1 class="mb-5">
+            <hr>Project Hub</h1>
+
         </div>
-        <div class="col-lg-5 my-auto">
-          <div class="device-container">
-            {% if form.errors %}
-            <p> Some Information Might be Incorrect </p>
-            {% endif %}
-            <div class="panel panel-default">
+      </div>
+      <div class="col-lg-5 my-auto">
+        <div class="device-container">
+          {% if form.errors %}
+          <p> Some Information Might be Incorrect </p>
+          {% endif %}
+          <div class="panel panel-default">
 
-              <div class="panel-heading">
-                <h3 class="text-center">Create Account</h3>
-              </div>
-              <div class="panel-body">
+            <div class="panel-heading">
+              <h3 class="text-center">Create Account</h3>
+            </div>
+            <div class="panel-body">
 
-                <form action="/accounts/register/" method="post">
-                  {% csrf_token %}
-                  {% bootstrap_form form %}
-                  <div class="form-group">
-                    <input type="submit" class="btn btn-primary btn-sm" value="Sign Up">
-                  </div>
+              <form action="/accounts/register/" method="post">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <div class="form-group">
+                  <input type="submit" class="btn btn-primary btn-sm" value="Sign Up">
+                </div>
 
-                  <input type="hidden" name="next" value="{{next}}">
+                <input type="hidden" name="next" value="{{next}}">
 
-                </form>
-
-              </div>
+              </form>
 
             </div>
 
           </div>
-          <!-- empty div -->
-          <div class="col-md-4"></div>
+
         </div>
-
-
-
+        <!-- empty div -->
+        <div class="col-md-4"></div>
       </div>
     </div>
+  </div>
 
-    </div>
-    </div>
-    </div>
-    </div>
+  </div>
+  </div>
+  </div>
+  </div>
   </header>
-
-
-
   <footer>
     <div class="container">
       <p>&copy; Project Hub Website 2020. All Rights Reserved.</p>
@@ -135,10 +130,6 @@
 
   <!-- Custom scripts for this template -->
   <script src="../../static/js/new-age.min.js"></script>
-
-
-
-
 
 </body>
 
