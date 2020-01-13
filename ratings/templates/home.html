@@ -72,7 +72,8 @@
     <div>
         <img src="{{projects.image.url}}" alt="image" height="300px;" width="300px;">
     </div>
-    <a>Rate</a>
+    <a href="{%url 'project' projects.id%}">Rate</a>
+    
 
     <a href="{% url 'displayprofile' projects.editor.id %}">View Profile</a>
     {%endfor%}
