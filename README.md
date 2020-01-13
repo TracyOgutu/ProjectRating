@@ -1,5 +1,5 @@
 ## PROJECT NAME
-# PROJECT RATING 
+# PROJECT HUB
 
 ## AUTHOR NAME
 # TRACY OGUTU
@@ -118,4 +118,4 @@ SOFTWARE.
 
 
 ## LINK TO HEROKU
-
+https://projectratehub.herokuapp.com/
